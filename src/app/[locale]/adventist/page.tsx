@@ -1,36 +1,62 @@
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import { Container } from '@/components/layout/Container';
+import Link from "next/link";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Container } from "@/components/layout/Container";
+import { adventistCards } from "@/content/adventist/cards";
 
-export default async function AdventistPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function AdventistPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
-  
+
   return (
     <main>
       <Header locale={locale} />
-      <div className="pt-40 pb-20 bg-premium-cream">
+
+      <div className="bg-premium-cream pb-20 pt-40">
         <Container>
-          <h1 className="text-6xl font-serif mb-8">{locale === 'pt' ? 'Adventista' : 'Adventist'}</h1>
-          <p className="text-xl text-premium-dark/60 max-w-2xl">
-            {locale === 'pt' ? 'Patrimônio e teologia adventista.' : 'Adventist heritage and theology.'}
+          <h1 className="mb-8 text-6xl font-serif">
+            {locale === "pt" ? "Adventista" : "Adventist"}
+          </h1>
+
+          <p className="max-w-2xl text-xl text-premium-dark/60">
+            {locale === "pt"
+              ? "Patrimônio e teologia adventista."
+              : "Adventist heritage and theology."}
           </p>
         </Container>
       </div>
+
       <section className="py-20">
         <Container>
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-             {[1,2,3].map(i => (
-               <div key={i} className="premium-card p-12 text-center">
-                 <div className="w-20 h-20 bg-premium-accent/10 rounded-full flex items-center justify-center mx-auto mb-8">
-                    <span className="text-premium-accent font-serif text-3xl">{i}</span>
-                 </div>
-                 <h3 className="text-2xl font-serif mb-4">Adventist Pillar {i}</h3>
-                 <p className="text-premium-dark/60">A deep dive into the historical and theological foundations...</p>
-               </div>
-             ))}
-           </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
+            {adventistCards.map((card, index) => (
+              <Link
+                key={card.slug}
+                href={`/${locale}/adventist/${card.slug}`}
+                className="premium-card p-12 text-center transition-transform duration-300 hover:-translate-y-1"
+              >
+                <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-premium-accent/10">
+                  <span className="text-3xl font-serif text-premium-accent">
+                    {index + 1}
+                  </span>
+                </div>
+
+                <h3 className="mb-4 text-2xl font-serif">{card.title}</h3>
+
+                <p className="mb-8 text-premium-dark/60">{card.desc}</p>
+
+                <span className="border-b border-premium-gold pb-1 text-xs font-bold uppercase tracking-widest">
+                  {locale === "pt" ? "Ler mais" : "Read More"}
+                </span>
+              </Link>
+            ))}
+          </div>
         </Container>
       </section>
+
       <Footer locale={locale} />
     </main>
   );
