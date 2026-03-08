@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { societyCards } from "@/content/society/cards";
+import { getSocietyCards } from "@/content/society/cards";
 
 export default async function SocietyPage({
   params,
@@ -10,6 +10,7 @@ export default async function SocietyPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const cards = getSocietyCards(locale);
 
   return (
     <main>
@@ -32,7 +33,7 @@ export default async function SocietyPage({
       <section className="py-20">
         <Container>
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            {societyCards.map((card) => (
+            {cards.map((card) => (
               <Link
                 key={card.slug}
                 href={`/${locale}/sociedade/${card.slug}`}
@@ -49,9 +50,7 @@ export default async function SocietyPage({
 
                 <div className="p-12">
                   <h3 className="mb-4 text-3xl font-serif">{card.title}</h3>
-
                   <p className="mb-8 text-premium-dark/60">{card.desc}</p>
-
                   <span className="border-b border-premium-gold pb-1 text-xs font-bold uppercase tracking-widest">
                     {locale === "pt" ? "Ler mais" : "Read More"}
                   </span>
