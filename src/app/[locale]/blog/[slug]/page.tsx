@@ -1,42 +1,69 @@
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import { Container } from '@/components/layout/Container';
+import { notFound } from "next/navigation";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Container } from "@/components/layout/Container";
+import { articles } from "@/content/blog/articles";
 
-export default async function ArticlePage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+export default async function ArticlePage({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
   const { locale, slug } = await params;
-  
+
+  const article = articles.find((item) => item.slug === slug);
+
+  if (!article) {
+    notFound();
+  }
+
+  const paragraphs = article.content
+    .trim()
+    .split("\n")
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+
   return (
     <main>
       <Header locale={locale} />
-      <article className="pt-40 pb-32">
+
+      <article className="pb-32 pt-40">
         <Container>
-          <header className="max-w-4xl mx-auto text-center mb-20">
-            <span className="text-xs font-bold uppercase tracking-widest text-premium-accent mb-6 block">Theology</span>
-            <h1 className="text-5xl md:text-7xl font-serif mb-8 leading-tight">The Eternal Light of Grace</h1>
+          <header className="mx-auto mb-20 max-w-4xl text-center">
+            <span className="mb-6 block text-xs font-bold uppercase tracking-widest text-premium-accent">
+              {article.category}
+            </span>
+
+            <h1 className="mb-8 text-5xl font-serif leading-tight md:text-7xl">
+              {article.title}
+            </h1>
+
             <div className="flex items-center justify-center space-x-4 text-xs font-bold uppercase tracking-widest text-premium-dark/40">
-              <span>By Elias Lico</span>
+              <span>{locale === "pt" ? "Por" : "By"} {article.author}</span>
               <span>•</span>
-              <span>March 5, 2026</span>
+              <span>{article.date}</span>
             </div>
           </header>
 
-          <div className="aspect-[21/9] rounded-3xl overflow-hidden mb-20">
-            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&q=80&w=2000" alt="Hero" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <div className="mb-20 aspect-[21/9] overflow-hidden rounded-3xl">
+            <img
+              src={article.image}
+              alt={article.title}
+              className="h-full w-full object-cover"
+              referrerPolicy="no-referrer"
+            />
           </div>
 
-          <div className="max-w-3xl mx-auto prose prose-xl font-serif leading-relaxed text-premium-dark/80">
-            <p className="text-2xl font-light italic mb-12">
-              "In the beginning was the Word, and the Word was with God, and the Word was God."
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+          <div className="prose prose-xl mx-auto max-w-3xl font-serif leading-relaxed text-premium-dark/80">
+            <p className="mb-12 text-2xl font-light italic">{article.excerpt}</p>
+
+            {paragraphs.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
           </div>
         </Container>
       </article>
+
       <Footer locale={locale} />
     </main>
   );
