@@ -1,39 +1,67 @@
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import { Container } from '@/components/layout/Container';
+import Link from "next/link";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Container } from "@/components/layout/Container";
+import { societyCards } from "@/content/society/cards";
 
-export default async function SocietyPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function SocietyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
-  
+
   return (
     <main>
       <Header locale={locale} />
-      <div className="pt-40 pb-20 bg-premium-cream">
+
+      <div className="bg-premium-cream pb-20 pt-40">
         <Container>
-          <h1 className="text-6xl font-serif mb-8">{locale === 'pt' ? 'Sociedade' : 'Society'}</h1>
-          <p className="text-xl text-premium-dark/60 max-w-2xl">
-            {locale === 'pt' ? 'Fé na praça pública.' : 'Faith in the public square.'}
+          <h1 className="mb-8 text-6xl font-serif">
+            {locale === "pt" ? "Sociedade" : "Society"}
+          </h1>
+
+          <p className="max-w-2xl text-xl text-premium-dark/60">
+            {locale === "pt"
+              ? "Fé na praça pública."
+              : "Faith in the public square."}
           </p>
         </Container>
       </div>
+
       <section className="py-20">
         <Container>
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-             {[1,2,3,4].map(i => (
-               <div key={i} className="premium-card overflow-hidden group">
-                 <div className="aspect-video overflow-hidden">
-                    <img src={`https://picsum.photos/seed/society${i}/1200/800`} alt="Society" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
-                 </div>
-                 <div className="p-12">
-                    <h3 className="text-3xl font-serif mb-4">Society Topic {i}</h3>
-                    <p className="text-premium-dark/60 mb-8">Exploring the intersection of faith and modern culture...</p>
-                    <button className="text-xs font-bold uppercase tracking-widest border-b border-premium-gold pb-1">Read More</button>
-                 </div>
-               </div>
-             ))}
-           </div>
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+            {societyCards.map((card) => (
+              <Link
+                key={card.slug}
+                href={`/${locale}/sociedade/${card.slug}`}
+                className="premium-card group overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+              >
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                <div className="p-12">
+                  <h3 className="mb-4 text-3xl font-serif">{card.title}</h3>
+
+                  <p className="mb-8 text-premium-dark/60">{card.desc}</p>
+
+                  <span className="border-b border-premium-gold pb-1 text-xs font-bold uppercase tracking-widest">
+                    {locale === "pt" ? "Ler mais" : "Read More"}
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </Container>
       </section>
+
       <Footer locale={locale} />
     </main>
   );
