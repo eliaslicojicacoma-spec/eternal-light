@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { articles } from "@/content/blog/articles";
+import { getArticleBySlug } from "@/content/blog/articles";
 
 export default async function ArticlePage({
   params,
@@ -11,7 +11,7 @@ export default async function ArticlePage({
 }) {
   const { locale, slug } = await params;
 
-  const article = articles.find((item) => item.slug === slug);
+  const article = getArticleBySlug(locale, slug);
 
   if (!article) {
     notFound();
