@@ -10,111 +10,184 @@ export interface AdventistArticle {
   image: string;
 }
 
-export const adventistArticles: AdventistArticle[] = [
-  {
-    id: "a1",
-    slug: "great-controversy",
-    title: "The Great Controversy",
-    excerpt:
-      "The biblical worldview is not random or morally neutral. It is the unfolding history of a real conflict between truth and rebellion.",
-    content: `
-One of the most powerful themes in Adventist theology is the great controversy. It gives coherence to the story of Scripture and helps explain the moral and spiritual tension of human history. Behind visible events lies a larger conflict between Christ and Satan, between truth and deception, between self-giving love and self-exalting pride.
+const adventistArticlesData = {
+  en: [
+    {
+      id: "a1",
+      slug: "great-controversy",
+      title: "The Great Controversy",
+      excerpt:
+        "The biblical worldview is not random or morally neutral. It is the unfolding history of a real conflict between truth and rebellion.",
+      content: `
+One of the strongest themes in Adventist theology is the great controversy. It gives coherence to Scripture and helps explain the moral tension of history.
 
-This theme begins before Eden. Sin did not originate on earth. Rebellion first appeared in heaven through a created being who turned away from trust and sought self-exaltation. From that point onward, the controversy became both cosmic and personal. It touches angels, nations, churches and individual hearts.
+Behind visible events lies a larger conflict between Christ and Satan, between truth and deception, between self-giving love and self-exalting pride.
 
-The fall of humanity placed the human race inside this conflict. We do not live in a morally neutral universe. Temptation, suffering, falsehood and death all testify that something has gone deeply wrong. Yet the great controversy theme does not merely explain evil; it also reveals God's character in response to evil.
+The cross stands at the center of this controversy. There God answered rebellion not with force, but with sacrificial love. Calvary exposed both the cruelty of sin and the beauty of divine government.
 
-At the center stands the cross. Calvary is not only the means of human salvation; it is the public revelation of divine love. There God answered Satan's accusations not with force, but with sacrificial truth. The cross exposes the cruelty of sin and the beauty of God's government.
+The resurrection guarantees that the conflict has an outcome. The struggle continues in history, but the decisive victory already belongs to Christ.
 
-The resurrection of Christ guarantees that the conflict has an outcome. The battle still unfolds in history, but the decisive victory has already been secured. This gives believers courage. We do not fight for a doubtful cause. We stand in a conflict whose end is certain.
+This doctrine gives clarity, not panic. It teaches the believer to interpret history, resist deception and remain grounded in hope.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-13",
+      category: "Doctrine",
+      image: "https://picsum.photos/seed/adventist-1/1400/900",
+    },
+    {
+      id: "a2",
+      slug: "sabbath-as-gift",
+      title: "The Sabbath as Gift",
+      excerpt:
+        "The Sabbath is more than a command. It is a gift of rest, identity, worship and joyful dependence on the Creator.",
+      content: `
+The Sabbath appears in Scripture first as gift, not burden. Before sin, before exhaustion, God separated a day for holy rest.
 
-The great controversy also shapes Christian living. It reminds us that truth matters, worship matters, obedience matters and character matters. Every life becomes a witness either to the spirit of Christ or to the principles of rebellion.
+It reminds humanity that life is not sustained by work alone. We are creatures, not gods. We pause because God is Creator and Lord.
 
-This teaching is not meant to create fear, but clarity. It helps the believer interpret history, resist deception and remain grounded in hope. The final victory belongs to Christ. Until then, the church is called to faithfulness.
-    `,
-    author: "Elias Lico",
-    date: "2026-03-13",
-    category: "Doctrine",
-    image: "/images/blog/great-controversy.jpg",
-  },
-  {
-    id: "a2",
-    slug: "sabbath-as-gift",
-    title: "The Sabbath as Gift",
-    excerpt:
-      "The Sabbath is more than a command. It is a gift of rest, identity, worship and joyful dependence on the Creator.",
-    content: `
-The Sabbath is often misunderstood by those who see it only as restriction. But in Scripture the Sabbath appears first not as burden, but as gift. Before there was sin, before there was exhaustion, God set apart a day. That means the Sabbath belongs not merely to law, but to creation and delight.
+The Sabbath also has covenant meaning. It is a sign of belonging and a weekly testimony that identity is received before it is achieved.
 
-In a restless world, the Sabbath restores rhythm. It interrupts the tyranny of endless production and reminds humanity that life is not sustained by work alone. We are creatures, not gods. We rest because God is God and we are not.
+In Christ, the Sabbath is restored to blessing. It is not oppression, but delight, worship and renewal.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-14",
+      category: "Sabbath",
+      image: "https://picsum.photos/seed/adventist-2/1400/900",
+    },
+    {
+      id: "a3",
+      slug: "sanctuary-and-christ",
+      title: "The Sanctuary and Christ",
+      excerpt:
+        "The sanctuary reveals the seriousness of sin, the beauty of mediation and the continuing ministry of Christ for His people.",
+      content: `
+The sanctuary is one of the richest themes in Scripture. Through symbols and priestly ministry it teaches how a holy God makes a way for sinners to draw near.
 
-The Sabbath also has covenant meaning. It is a sign of belonging. It reminds the believer that identity is received before it is achieved. On this day, work pauses and worship rises. Time itself becomes testimony that God is Creator, Redeemer and Sanctifier.
+Every part of the sanctuary points beyond itself to Christ. The sacrifice points to His death. The priest points to His mediation. The cleansing points to His work of judgment and restoration.
 
-Christ did not diminish the Sabbath; He restored its true meaning. He rejected traditions that turned it into oppression and showed that the day was made for blessing. The Sabbath is not legalistic when understood correctly. It is relational, healing and deeply spiritual.
+For Adventists, the heavenly ministry of Christ is not distant theology. It is present hope. Jesus ministers for His people now.
 
-For Adventists, the Sabbath also points forward. It anticipates the rest of the kingdom and stands as a sign of loyalty in a confused world. In the final crisis of worship, the Sabbath becomes especially significant because it testifies to the authority of the Creator.
+The sanctuary teaches that salvation is not only about a past event, but also about Christ’s continuing ministry on behalf of the church.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-15",
+      category: "Sanctuary",
+      image: "https://picsum.photos/seed/adventist-3/1400/900",
+    },
+    {
+      id: "a4",
+      slug: "three-angels-messages",
+      title: "The Three Angels’ Messages",
+      excerpt:
+        "Revelation 14 presents a final call to worship the Creator, reject deception and stand faithfully with Christ.",
+      content: `
+The three angels’ messages stand at the heart of Adventist mission. They are not merely symbolic announcements, but a living call to the world.
 
-To keep the Sabbath is not merely to avoid work. It is to enter holy time with gratitude. It is to make room for family, Scripture, prayer, worship, nature, service and spiritual reflection. It is to taste eternity in the weekly cycle of time.
+The first angel calls humanity to fear God, give Him glory and worship the Creator. The second announces the fall of Babylon. The third warns against false allegiance and corrupted worship.
 
-The Sabbath as gift protects the soul from slavery to productivity and from forgetfulness of God. It teaches trust. It teaches delight. It teaches that true life is found not in endless labor, but in communion with the One who made us.
-    `,
-    author: "Elias Lico",
-    date: "2026-03-14",
-    category: "Sabbath",
-    image: "/images/blog/sabbath-as-gift.jpg",
-  },
-  {
-    id: "a3",
-    slug: "sanctuary-and-christ",
-    title: "The Sanctuary and Christ",
-    excerpt:
-      "The sanctuary reveals the seriousness of sin, the beauty of mediation and the continuing ministry of Christ for His people.",
-    content: `
-The sanctuary is one of the richest themes in Scripture. Far from being a minor detail of Israel's worship, it provides a visual theology of salvation. Through symbols, sacrifices and priestly ministry, the sanctuary teaches how a holy God makes a way for sinners to draw near.
+These messages are solemn, but they are also filled with gospel urgency. At the center stands the everlasting gospel.
 
-Every part of the sanctuary points beyond itself to Christ. The sacrifice points to His death. The priest points to His mediation. The cleansing points to His work of judgment and restoration. The sanctuary is therefore not merely an Old Testament curiosity; it is a Christ-centered map of redemption.
+For Adventists, this is not just doctrine for study. It is mission, identity and witness in the last phase of history.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-16",
+      category: "Prophecy",
+      image: "https://picsum.photos/seed/adventist-4/1400/900",
+    }
+  ],
+  pt: [
+    {
+      id: "a1",
+      slug: "great-controversy",
+      title: "O Grande Conflito",
+      excerpt:
+        "A cosmovisão bíblica não é aleatória nem moralmente neutra. É a história de um conflito real entre verdade e rebelião.",
+      content: `
+Um dos temas mais fortes da teologia adventista é o grande conflito. Ele dá coerência à Escritura e ajuda a explicar a tensão moral da história.
 
-The earthly sanctuary showed that sin is costly. Forgiveness is not casual. Blood, fire, incense and priestly service all testified that reconciliation requires divine provision. Human beings do not solve the problem of sin by effort. God provides the way.
+Por trás dos acontecimentos visíveis existe um conflito maior entre Cristo e Satanás, entre verdade e engano, entre amor que se entrega e orgulho que se exalta.
 
-Adventists especially emphasize the heavenly ministry of Christ. After His ascension, Jesus did not become distant from His people. He entered heavenly ministry as our High Priest. This means salvation is not only about a past event at the cross, but also about a present ministry in heaven.
+A cruz está no centro desse conflito. Ali Deus respondeu à rebelião não com força, mas com amor sacrificial. O Calvário revelou tanto a crueldade do pecado quanto a beleza do governo divino.
 
-The sanctuary message also gives meaning to judgment. Judgment is not merely terror for the believer. It is part of God's work to vindicate truth, expose evil and bring history to a righteous conclusion. In Christ, judgment becomes a reason for reverent confidence, not despair.
+A ressurreição garante que o conflito tem um desfecho. A luta continua na história, mas a vitória decisiva já pertence a Cristo.
 
-This doctrine deepens assurance because it keeps Christ central. Our hope is not in our performance, but in our Priest. He intercedes, He represents and He completes what He began. The sanctuary teaches that heaven is actively engaged in the salvation of God's people.
+Essa doutrina traz clareza, não pânico. Ensina o crente a interpretar a história, resistir ao engano e permanecer firme na esperança.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-13",
+      category: "Doutrina",
+      image: "https://picsum.photos/seed/adventist-1/1400/900",
+    },
+    {
+      id: "a2",
+      slug: "sabbath-as-gift",
+      title: "O Sábado como Dom",
+      excerpt:
+        "O sábado é mais do que um mandamento. É um dom de descanso, identidade, adoração e dependência alegre do Criador.",
+      content: `
+O sábado aparece na Escritura primeiro como dom, não como peso. Antes do pecado, antes do cansaço, Deus separou um dia para descanso santo.
 
-To study the sanctuary is to see the gospel in structure, sequence and symbol. It reminds the church that salvation is both accomplished and applied. Christ died for us, ministers for us and will one day bring the conflict to its final close.
-    `,
-    author: "Elias Lico",
-    date: "2026-03-15",
-    category: "Sanctuary",
-    image: "/images/blog/sanctuary-and-christ.jpg",
-  },
-  {
-    id: "a4",
-    slug: "three-angels-messages",
-    title: "The Three Angels’ Messages",
-    excerpt:
-      "Revelation 14 presents a final call to worship the Creator, reject deception and stand faithfully with Christ.",
-    content: `
-The three angels’ messages of Revelation 14 stand at the heart of Adventist mission. They are not merely symbolic announcements for theological interest. They are heaven's urgent appeal to the world in the last phase of history.
+Ele lembra à humanidade que a vida não é sustentada apenas pelo trabalho. Somos criaturas, não deuses. Paramos porque Deus é Criador e Senhor.
 
-The first angel calls humanity to fear God, give Him glory and worship the Creator. In an age of confusion, self-exaltation and false worship, this message restores the centrality of God. It also connects directly to creation and the Sabbath, calling the world back to the authority of its Maker.
+O sábado também tem significado de aliança. É sinal de pertencimento e testemunho semanal de que a identidade é recebida antes de ser conquistada.
 
-The second angel announces the fall of Babylon. This is a message about spiritual confusion, corrupted religion and systems of falsehood that distort God's character. Babylon represents religious mixture, compromise and deception. The call is not merely to identify error, but to separate from it.
+Em Cristo, o sábado é restaurado como bênção. Não é opressão, mas alegria, adoração e renovação.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-14",
+      category: "Sábado",
+      image: "https://picsum.photos/seed/adventist-2/1400/900",
+    },
+    {
+      id: "a3",
+      slug: "sanctuary-and-christ",
+      title: "O Santuário e Cristo",
+      excerpt:
+        "O santuário revela a gravidade do pecado, a beleza da mediação e o ministério contínuo de Cristo por Seu povo.",
+      content: `
+O santuário é um dos temas mais ricos da Escritura. Através de símbolos e ministério sacerdotal ele ensina como um Deus santo faz caminho para que pecadores se aproximem.
 
-The third angel is the most solemn. It warns against allegiance to the beast and his image. At its core, this is a message about worship, loyalty and final allegiance. It reveals that the closing conflict of history is not superficial. It concerns obedience, identity and truth.
+Cada parte do santuário aponta além de si mesma para Cristo. O sacrifício aponta para Sua morte. O sacerdote aponta para Sua mediação. A purificação aponta para Sua obra de juízo e restauração.
 
-These messages are not given to produce fear alone. They are filled with gospel urgency. In the same chapter, the everlasting gospel stands at the center. That means the final message to the world is not bare warning, but warning joined with hope. God still calls, invites and saves.
+Para os adventistas, o ministério celestial de Cristo não é teologia distante. É esperança presente. Jesus ministra agora em favor do Seu povo.
 
-For Adventists, this passage defines purpose. The church exists not merely to maintain itself, but to proclaim a prophetic message with love, clarity and courage. The three angels’ messages are not abstract ideas; they shape preaching, mission, worship and witness.
+O santuário ensina que a salvação não trata apenas de um evento passado, mas também do ministério contínuo de Cristo em favor da igreja.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-15",
+      category: "Santuário",
+      image: "https://picsum.photos/seed/adventist-3/1400/900",
+    },
+    {
+      id: "a4",
+      slug: "three-angels-messages",
+      title: "As Três Mensagens Angélicas",
+      excerpt:
+        "Apocalipse 14 apresenta um chamado final para adorar o Criador, rejeitar o engano e permanecer fiel a Cristo.",
+      content: `
+As três mensagens angélicas estão no centro da missão adventista. Não são apenas anúncios simbólicos, mas um chamado vivo ao mundo.
 
-To preach these messages faithfully, the church must keep Christ central. Prophecy without Christ becomes cold. Warning without grace becomes distorted. But when the everlasting gospel stands in the middle, the three angels’ messages become what they were meant to be: truth in love for a world nearing its final decision.
+O primeiro anjo chama a humanidade a temer a Deus, dar-Lhe glória e adorar o Criador. O segundo anuncia a queda de Babilônia. O terceiro adverte contra falsa lealdade e adoração corrompida.
 
-This is why Revelation 14 remains vital. It is not only a message for study. It is a message for proclamation, character and mission.
-    `,
-    author: "Elias Lico",
-    date: "2026-03-16",
-    category: "Prophecy",
-    image: "/images/blog/three-angels-messages.jpg",
-  }
-];
+Essas mensagens são solenes, mas também cheias de urgência evangélica. No centro delas está o evangelho eterno.
+
+Para os adventistas, isso não é apenas doutrina para estudo. É missão, identidade e testemunho na fase final da história.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-16",
+      category: "Profecia",
+      image: "https://picsum.photos/seed/adventist-4/1400/900",
+    }
+  ]
+};
+
+export function getAdventistArticles(locale: string): AdventistArticle[] {
+  return locale === "pt" ? adventistArticlesData.pt : adventistArticlesData.en;
+}
+
+export function getAdventistArticleBySlug(
+  locale: string,
+  slug: string
+): AdventistArticle | undefined {
+  return getAdventistArticles(locale).find((article) => article.slug === slug);
+}
