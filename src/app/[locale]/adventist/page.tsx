@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { adventistCards } from "@/content/adventist/cards";
+import { getAdventistCards } from "@/content/adventist/cards";
 
 export default async function AdventistPage({
   params,
@@ -10,6 +10,7 @@ export default async function AdventistPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const cards = getAdventistCards(locale);
 
   return (
     <main>
@@ -32,7 +33,7 @@ export default async function AdventistPage({
       <section className="py-20">
         <Container>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
-            {adventistCards.map((card, index) => (
+            {cards.map((card, index) => (
               <Link
                 key={card.slug}
                 href={`/${locale}/adventist/${card.slug}`}
@@ -45,7 +46,6 @@ export default async function AdventistPage({
                 </div>
 
                 <h3 className="mb-4 text-2xl font-serif">{card.title}</h3>
-
                 <p className="mb-8 text-premium-dark/60">{card.desc}</p>
 
                 <span className="border-b border-premium-gold pb-1 text-xs font-bold uppercase tracking-widest">
