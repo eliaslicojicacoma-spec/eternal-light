@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { societyArticles } from "@/content/society/articles";
+import { getSocietyArticleBySlug } from "@/content/society/articles";
 
 export default async function SocietyArticlePage({
   params,
@@ -11,7 +11,7 @@ export default async function SocietyArticlePage({
 }) {
   const { locale, slug } = await params;
 
-  const article = societyArticles.find((item) => item.slug === slug);
+  const article = getSocietyArticleBySlug(locale, slug);
 
   if (!article) {
     notFound();
