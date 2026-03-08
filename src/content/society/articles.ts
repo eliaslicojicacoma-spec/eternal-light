@@ -10,113 +10,176 @@ export interface SocietyArticle {
   image: string;
 }
 
-export const societyArticles: SocietyArticle[] = [
-  {
-    id: "s1",
-    slug: "faith-politics",
-    title: "Faith and Politics",
-    excerpt:
-      "Believers are called to conscience, wisdom and integrity in the public square without surrendering the spirit of Christ.",
-    content: `
-Politics can easily become a field of division, anger and fear. For this reason many believers either dive into it without discernment or withdraw from it completely. Yet Christian faith cannot ignore public life, because justice, truth, dignity and human flourishing are all moral concerns.
+const societyArticlesData = {
+  en: [
+    {
+      id: "s1",
+      slug: "faith-politics",
+      title: "Faith and Politics",
+      excerpt:
+        "Believers are called to conscience, wisdom and integrity in the public square without surrendering the spirit of Christ.",
+      content: `
+Politics can easily become a field of anger, division and fear. Yet Christian faith cannot ignore public life, because justice, truth and human dignity are moral concerns.
 
-The challenge is not whether Christians should care about society. The challenge is how they should care. Scripture does not call believers to blind partisanship. It calls them to fidelity to God's principles. This means refusing to let ideology replace conscience or political identity replace spiritual identity.
+The issue is not whether believers should care about society, but how they should care. Scripture does not call Christians to blind partisanship. It calls them to truth, humility and principle.
 
-Faith and politics must never be confused. The kingdom of God is not equal to any earthly party, movement or nation. When believers forget this, they begin to defend human systems with a zeal that belongs only to God. That is where discernment is needed.
+Faith and politics must not be confused. The kingdom of God is not the same as any earthly system. When believers forget this, they defend political identity with a zeal that belongs only to Christ.
 
-The Christian in public life must pursue truth without hatred, conviction without pride and courage without cruelty. Public disagreement is inevitable, but the spirit in which we engage matters. The gospel does not permit dishonesty for strategic gain. It does not approve slander as a tool of victory. It does not excuse the loss of mercy.
+The public square needs believers who combine conviction with humility, courage with mercy and clarity with honesty. In a polarized age, that witness matters deeply.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-09",
+      category: "Public Life",
+      image: "https://picsum.photos/seed/society-politics/1400/900",
+    },
+    {
+      id: "s2",
+      slug: "family-fragmented-age",
+      title: "Family in a Fragmented Age",
+      excerpt:
+        "The family remains one of the most important places for truth, stability, affection and spiritual formation.",
+      content: `
+One of the great struggles of modern society is fragmentation. People are connected digitally yet emotionally distant. In this environment the family becomes both vulnerable and essential.
 
-Politics also tests our understanding of power. Jesus did not teach indifference toward injustice, but He also did not model domination. Christian witness is strongest when it combines moral clarity with humility. The believer should be recognizable not only by what he opposes, but by the way he speaks, serves and suffers.
+The home should be more than a place of survival. It should be a place of formation. Children learn there what love feels like, what discipline sounds like and what faith looks like.
 
-Healthy political engagement begins with spiritual order. Before trying to influence society, the believer must allow Scripture to shape his own mind. Prayer must come before rage. Principle must come before tribe. Truth must come before convenience.
+A Christian family does not need to be perfect, but it must be intentional. Presence matters. Shared prayer matters. Honest conversation matters. Faithfulness in small things matters.
 
-The public square needs Christians who are neither naïve nor cynical. It needs men and women whose loyalty to Christ is greater than their loyalty to slogans. In an age of polarization, such believers become a quiet but powerful witness.
+In a fragmented age, strong homes become a witness that covenant, tenderness and truth still matter.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-10",
+      category: "Family",
+      image: "https://picsum.photos/seed/society-family/1400/900",
+    },
+    {
+      id: "s3",
+      slug: "youth-identity-pressure",
+      title: "Youth, Identity and Pressure",
+      excerpt:
+        "Young people are growing under intense pressure to perform, compare and define themselves apart from God.",
+      content: `
+The modern young person faces enormous pressure. Expectations come from screens, peers, school, culture and comparison. Identity is often treated like a project of endless reinvention.
 
-Faith and politics can coexist, but only when politics remains under the authority of faith. The believer belongs first to the kingdom of God. That priority changes everything.
-    `,
-    author: "Elias Lico",
-    date: "2026-03-09",
-    category: "Public Life",
-    image: "/images/sociedade/faith-politics.jpg",
-  },
-  {
-    id: "s2",
-    slug: "family-fragmented-age",
-    title: "Family in a Fragmented Age",
-    excerpt:
-      "The family remains one of the most important places for truth, stability, affection and spiritual formation.",
-    content: `
-One of the great struggles of modern society is fragmentation. People are connected digitally yet emotionally distant. Time is filled, but relationships are thin. In this environment the family becomes both vulnerable and necessary.
+The Christian answer is not merely self-esteem, but identity rooted in Christ. Human worth does not begin with public approval. It begins with being created by God and called by grace.
 
-The home is meant to be more than a place of survival. It should be a place of formation. Children learn there what love feels like, what discipline looks like, what respect sounds like and what faith means in daily life. When the family weakens, the entire social fabric suffers.
+When identity is received in Christ, the soul has a center strong enough to resist confusion. The church must help young people find this center through truth, example and discipleship.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-11",
+      category: "Youth",
+      image: "https://picsum.photos/seed/society-youth/1400/900",
+    },
+    {
+      id: "s4",
+      slug: "media-attention-soul",
+      title: "Media, Attention and the Soul",
+      excerpt:
+        "Digital culture shapes not only what we consume, but how we think, feel and pray.",
+      content: `
+The question is no longer whether media influences us. It does. The deeper question is how deeply it shapes our habits of attention and the condition of our souls.
 
-A Christian vision of family does not require perfection, but it does require intentionality. Love must be practiced, not assumed. Presence matters. Shared meals matter. Honest conversation matters. Prayer in the home matters. The strongest families are often not the most impressive outwardly, but the most faithful in small daily habits.
+Digital tools are not evil in themselves, but constant stimulation weakens patience, reflection and prayer when left unchecked.
 
-A fragmented age trains people toward impatience. Family life trains us in sacrifice. We learn to forgive, to listen, to correct and to remain. This is one reason the family is under so much pressure: it stands against the logic of self-centered culture.
+The Christian response is wisdom, not panic. We need boundaries, silence and a renewed attention shaped by Scripture instead of endless distraction.
 
-Parents carry a sacred responsibility. They are not only providers of material needs; they are shepherds of atmosphere. The tone of the home matters. If children grow in constant tension, they learn anxiety. If they grow in affection and truth, they learn security.
+Attention is a spiritual issue because what continually captures the mind slowly shapes the heart.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-12",
+      category: "Culture",
+      image: "https://picsum.photos/seed/society-media/1400/900",
+    }
+  ],
+  pt: [
+    {
+      id: "s1",
+      slug: "faith-politics",
+      title: "Fé e Política",
+      excerpt:
+        "Os crentes são chamados à consciência, sabedoria e integridade na praça pública sem perder o espírito de Cristo.",
+      content: `
+A política pode facilmente tornar-se um campo de ira, divisão e medo. Ainda assim, a fé cristã não pode ignorar a vida pública, porque justiça, verdade e dignidade humana são assuntos morais.
 
-The gospel also gives hope to damaged families. Not every home begins healthy. Not every relationship is easy. But grace can enter the ordinary and even the broken. Through repentance, patience and God's help, homes can be rebuilt.
+A questão não é se os crentes devem se importar com a sociedade, mas como devem se importar. A Escritura não chama os cristãos ao partidarismo cego. Chama à verdade, humildade e princípio.
 
-Family is not an outdated institution. It is one of God's primary workshops for character. In a fragmented age, strong and loving homes become a testimony to the world that covenant still matters, tenderness still matters and faith still has a place at the table.
-    `,
-    author: "Elias Lico",
-    date: "2026-03-10",
-    category: "Family",
-    image: "/images/sociedade/family-fragmented-age.jpg",
-  },
-  {
-    id: "s3",
-    slug: "youth-identity-pressure",
-    title: "Youth, Identity and Pressure",
-    excerpt:
-      "Young people are growing up under intense pressure to perform, compare and define themselves apart from God.",
-    content: `
-The modern young person faces a unique storm of pressure. Expectations come from family, school, peers, screens and culture all at once. Identity is treated like a project of constant reinvention, and value is often measured by visibility, performance and approval.
+Fé e política não podem ser confundidas. O reino de Deus não é igual a qualquer sistema terreno. Quando os crentes esquecem isso, defendem identidade política com um zelo que pertence apenas a Cristo.
 
-This creates exhaustion. A generation told to be anything often ends up not knowing who it is. The Christian answer is not merely better self-esteem. It is deeper identity. Scripture teaches that human worth is rooted first in being created by God and invited into relationship with Christ.
+A praça pública precisa de crentes que juntem convicção com humildade, coragem com misericórdia e clareza com honestidade. Num tempo polarizado, esse testemunho importa muito.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-09",
+      category: "Vida Pública",
+      image: "https://picsum.photos/seed/society-politics/1400/900",
+    },
+    {
+      id: "s2",
+      slug: "family-fragmented-age",
+      title: "Família em uma Era Fragmentada",
+      excerpt:
+        "A família continua a ser um dos lugares mais importantes para verdade, estabilidade, afeto e formação espiritual.",
+      content: `
+Uma das grandes lutas da sociedade moderna é a fragmentação. As pessoas estão conectadas digitalmente, mas emocionalmente distantes. Nesse ambiente, a família torna-se ao mesmo tempo vulnerável e essencial.
 
-When identity is detached from God, young people are left to build themselves from unstable materials: trends, reactions, comparison and emotion. But when identity is received in Christ, there is a center strong enough to resist confusion. The believer can say, “I am not the sum of public opinion. I belong to God.”
+O lar deve ser mais do que um lugar de sobrevivência. Deve ser um lugar de formação. Ali as crianças aprendem como é o amor, como soa a disciplina e como a fé aparece na vida real.
 
-The church and the family both have a role here. Young people need more than warnings; they need formation. They need honest adults, meaningful mentorship, spaces for questions and examples of integrated faith. They need to see that Christianity is not a performance of perfection but a life of truth and grace.
+Uma família cristã não precisa ser perfeita, mas precisa ser intencional. Presença importa. Oração em conjunto importa. Conversa honesta importa. Fidelidade nas pequenas coisas importa.
 
-Pressure also distorts ambition. There is nothing wrong with excellence, but there is danger in basing dignity on achievement. A young person who fails at something important should not feel that life itself has failed. This is where Christian identity becomes deeply healing.
+Numa era fragmentada, lares fortes tornam-se testemunho de que aliança, ternura e verdade ainda importam.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-10",
+      category: "Família",
+      image: "https://picsum.photos/seed/society-family/1400/900",
+    },
+    {
+      id: "s3",
+      slug: "youth-identity-pressure",
+      title: "Juventude, Identidade e Pressão",
+      excerpt:
+        "Os jovens crescem sob forte pressão para provar valor, comparar-se e definir-se sem Deus.",
+      content: `
+O jovem moderno enfrenta enorme pressão. As expectativas vêm das telas, dos colegas, da escola, da cultura e da comparação. A identidade passa a ser tratada como um projeto de reinvenção sem fim.
 
-Youth culture changes quickly, but the hunger beneath it remains the same: to be known, to belong and to matter. Only Christ answers all three fully. He knows the heart, gives belonging in His body and grants worth that cannot be erased by failure.
+A resposta cristã não é apenas autoestima, mas identidade firmada em Cristo. O valor humano não começa na aprovação pública. Começa no fato de sermos criados por Deus e chamados pela graça.
 
-The task before us is not to condemn youth from a distance, but to disciple them with wisdom. A generation under pressure needs anchors. Truth, love, holiness and hope must become visible again.
-    `,
-    author: "Elias Lico",
-    date: "2026-03-11",
-    category: "Youth",
-    image: "/images/sociedade/youth-identity-pressure.jpg",
-  },
-  {
-    id: "s4",
-    slug: "media-attention-soul",
-    title: "Media, Attention and the Soul",
-    excerpt:
-      "Digital culture shapes not only what we consume, but how we think, feel, remember and pray.",
-    content: `
-The question is no longer whether media influences us. It does. The deeper question is how deeply it forms our habits of attention and the condition of our souls.
+Quando a identidade é recebida em Cristo, a alma encontra um centro forte o suficiente para resistir à confusão. A igreja precisa ajudar os jovens a encontrar esse centro por meio da verdade, do exemplo e do discipulado.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-11",
+      category: "Juventude",
+      image: "https://picsum.photos/seed/society-youth/1400/900",
+    },
+    {
+      id: "s4",
+      slug: "media-attention-soul",
+      title: "Mídia, Atenção e a Alma",
+      excerpt:
+        "A cultura digital molda não apenas o que consumimos, mas como pensamos, sentimos e até oramos.",
+      content: `
+A pergunta já não é se a mídia nos influencia. Influencia. A pergunta mais profunda é o quanto ela molda nossos hábitos de atenção e a condição da nossa alma.
 
-Attention is a spiritual issue because what continually captures the mind slowly shapes the heart. A scattered life becomes a shallow life if nothing interrupts the cycle. Constant stimulation weakens patience, weakens reflection and often weakens prayer.
+Ferramentas digitais não são más em si mesmas, mas a estimulação constante enfraquece a paciência, a reflexão e a oração quando fica sem controle.
 
-Digital tools are not evil in themselves. They can educate, connect and even spread truth. But without discipline they can fill the inner life with noise. Endless scrolling trains restlessness. Constant reaction trains superficial judgment. A mind always consuming has difficulty resting in God's presence.
+A resposta cristã é sabedoria, não pânico. Precisamos de limites, silêncio e uma atenção renovada moldada pela Escritura em vez de distração sem fim.
 
-The Christian response is not panic but wisdom. We need boundaries. We need sabbath moments from the screen. We need to recover long attention: reading deeply, listening carefully, praying without hurry, being present with people rather than merely near them.
+A atenção é uma questão espiritual porque aquilo que continuamente domina a mente acaba moldando o coração.
+      `,
+      author: "Elias Lico",
+      date: "2026-03-12",
+      category: "Cultura",
+      image: "https://picsum.photos/seed/society-media/1400/900",
+    }
+  ]
+};
 
-Media also shapes desire. What we see repeatedly begins to feel normal, attractive or necessary. This is why purity of attention matters. Not every image that enters the eyes leaves the heart unchanged. The soul absorbs more than we think.
+export function getSocietyArticles(locale: string): SocietyArticle[] {
+  return locale === "pt" ? societyArticlesData.pt : societyArticlesData.en;
+}
 
-To guard attention is not legalism. It is stewardship. We protect what matters. If our minds are constantly overrun, our spiritual sensitivity weakens. We become less able to hear Scripture deeply, less able to notice conviction and less able to dwell in gratitude.
-
-Christ calls us not only to right doctrine, but to renewed minds. That renewal includes the hidden economy of attention. A believer must ask: What is forming me daily? What is training my desires? What is crowding out silence and truth?
-
-Media is powerful. But the soul does not have to be surrendered to it. With discipline, discernment and grace, believers can live in the digital age without allowing the digital age to rule the heart.
-    `,
-    author: "Elias Lico",
-    date: "2026-03-12",
-    category: "Culture",
-    image: "/images/sociedade/media-attention-soul.jpg",
-  }
-];
+export function getSocietyArticleBySlug(
+  locale: string,
+  slug: string
+): SocietyArticle | undefined {
+  return getSocietyArticles(locale).find((article) => article.slug === slug);
+}
