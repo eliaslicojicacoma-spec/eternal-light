@@ -26,7 +26,9 @@ export function BlogCard({ article, locale }: BlogCardProps) {
           {article.category}
         </div>
 
-        <h3 className="mb-4 text-2xl font-serif leading-snug">{article.title}</h3>
+        <h3 className="mb-4 text-2xl font-serif leading-snug">
+          {article.title}
+        </h3>
 
         <p className="mb-6 text-premium-dark/60">{article.excerpt}</p>
 
