@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { adventistArticles } from "@/content/adventist/articles";
+import { getAdventistArticleBySlug } from "@/content/adventist/articles";
 
 export default async function AdventistArticlePage({
   params,
@@ -11,7 +11,7 @@ export default async function AdventistArticlePage({
 }) {
   const { locale, slug } = await params;
 
-  const article = adventistArticles.find((item) => item.slug === slug);
+  const article = getAdventistArticleBySlug(locale, slug);
 
   if (!article) {
     notFound();
