@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/newsletter/route": "/api/newsletter",
+  "/page": "/",
+  "/[locale]/about/page": "/[locale]/about",
+  "/[locale]/adventist/page": "/[locale]/adventist",
+  "/[locale]/adventist/[slug]/page": "/[locale]/adventist/[slug]",
+  "/[locale]/blog/[slug]/page": "/[locale]/blog/[slug]",
+  "/[locale]/blog/page": "/[locale]/blog",
+  "/[locale]/library/[slug]/page": "/[locale]/library/[slug]",
+  "/[locale]/library/page": "/[locale]/library",
+  "/[locale]/page": "/[locale]",
+  "/[locale]/privacy/page": "/[locale]/privacy",
+  "/[locale]/sociedade/[slug]/page": "/[locale]/sociedade/[slug]",
+  "/[locale]/sociedade/page": "/[locale]/sociedade",
+  "/[locale]/subscribe/page": "/[locale]/subscribe",
+  "/[locale]/terms/page": "/[locale]/terms",
+  "/[locale]/verse-of-day/page": "/[locale]/verse-of-day"
+}

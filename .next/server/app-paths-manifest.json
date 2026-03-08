@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/newsletter/route": "app/api/newsletter/route.js",
+  "/page": "app/page.js",
+  "/[locale]/about/page": "app/[locale]/about/page.js",
+  "/[locale]/adventist/page": "app/[locale]/adventist/page.js",
+  "/[locale]/adventist/[slug]/page": "app/[locale]/adventist/[slug]/page.js",
+  "/[locale]/blog/[slug]/page": "app/[locale]/blog/[slug]/page.js",
+  "/[locale]/blog/page": "app/[locale]/blog/page.js",
+  "/[locale]/library/[slug]/page": "app/[locale]/library/[slug]/page.js",
+  "/[locale]/library/page": "app/[locale]/library/page.js",
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/privacy/page": "app/[locale]/privacy/page.js",
+  "/[locale]/sociedade/[slug]/page": "app/[locale]/sociedade/[slug]/page.js",
+  "/[locale]/sociedade/page": "app/[locale]/sociedade/page.js",
+  "/[locale]/subscribe/page": "app/[locale]/subscribe/page.js",
+  "/[locale]/terms/page": "app/[locale]/terms/page.js",
+  "/[locale]/verse-of-day/page": "app/[locale]/verse-of-day/page.js"
+}
