@@ -8,6 +8,7 @@ export interface BookItem {
   image: string;
   category: string;
   year?: string;
+  pdfPath: string;
 }
 
 const booksData = {
@@ -30,6 +31,7 @@ Its pages call the soul away from fear, self-reliance and formalism, and toward 
       image: "https://picsum.photos/seed/steps-to-christ/1200/1600",
       category: "Devotional",
       year: "1892",
+      pdfPath: "/downloads/steps-to-christ.pdf",
     },
     {
       id: "b2",
@@ -49,6 +51,7 @@ This is not merely a historical work. It is a spiritual appeal to stand on the s
       image: "https://picsum.photos/seed/great-controversy-book/1200/1600",
       category: "Prophecy",
       year: "1888",
+      pdfPath: "/downloads/the-great-controversy.pdf",
     },
     {
       id: "b3",
@@ -68,6 +71,7 @@ It is especially valuable for those who want to meditate more deeply on the gosp
       image: "https://picsum.photos/seed/desire-of-ages/1200/1600",
       category: "Christology",
       year: "1898",
+      pdfPath: "/downloads/the-desire-of-ages.pdf",
     },
     {
       id: "b4",
@@ -87,7 +91,8 @@ For readers seeking to understand the flow of biblical history with spiritual in
       image: "https://picsum.photos/seed/patriarchs-prophets/1200/1600",
       category: "Biblical History",
       year: "1890",
-    }
+      pdfPath: "/downloads/patriarchs-and-prophets.pdf",
+    },
   ],
   pt: [
     {
@@ -108,6 +113,7 @@ Suas páginas chamam a alma para longe do medo, da autossuficiência e do formal
       image: "https://picsum.photos/seed/steps-to-christ/1200/1600",
       category: "Devocional",
       year: "1892",
+      pdfPath: "/downloads/caminho-a-cristo.pdf",
     },
     {
       id: "b2",
@@ -127,6 +133,7 @@ Não é apenas um livro histórico. É também um apelo espiritual para permanec
       image: "https://picsum.photos/seed/great-controversy-book/1200/1600",
       category: "Profecia",
       year: "1888",
+      pdfPath: "/downloads/o-grande-conflito.pdf",
     },
     {
       id: "b3",
@@ -146,6 +153,7 @@ Muitos leitores guardam este livro com carinho porque ele eleva Jesus acima de t
       image: "https://picsum.photos/seed/desire-of-ages/1200/1600",
       category: "Cristologia",
       year: "1898",
+      pdfPath: "/downloads/o-desejado-de-todas-as-nacoes.pdf",
     },
     {
       id: "b4",
@@ -165,7 +173,8 @@ Para leitores que buscam entender o fluxo da história bíblica com visão espir
       image: "https://picsum.photos/seed/patriarchs-prophets/1200/1600",
       category: "História Bíblica",
       year: "1890",
-    }
+      pdfPath: "/downloads/patriarcas-e-profetas.pdf",
+    },
   ],
 };
 
@@ -175,4 +184,4 @@ export function getBooks(locale: string): BookItem[] {
 
 export function getBookBySlug(locale: string, slug: string): BookItem | undefined {
   return getBooks(locale).find((book) => book.slug === slug);
-}
+                              }
