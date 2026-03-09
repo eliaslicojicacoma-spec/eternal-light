@@ -4,9 +4,9 @@ import { getBookBySlug } from "@/content/books/books";
 export default async function ReadBookPage({
   params,
 }: {
-  params: { locale: string; slug: string };
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { locale, slug } = params;
+  const { locale, slug } = await params;
 
   const book = getBookBySlug(locale, slug);
 
@@ -15,14 +15,8 @@ export default async function ReadBookPage({
   }
 
   return (
-    <main style={{ padding: "40px", maxWidth: "800px", margin: "auto" }}>
+    <main style={{ maxWidth: "800px", margin: "auto", padding: "40px" }}>
       <h1>{book.title}</h1>
-
-      <p>
-        {locale === "pt"
-          ? "Leitura online do livro."
-          : "Reading the book online."}
-      </p>
 
       {book.chapters.map((chapter) => (
         <div key={chapter.id} style={{ marginTop: "40px" }}>
