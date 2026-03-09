@@ -1,0 +1,28 @@
+{
+  "books": [
+    {
+      "title": "Caminho a Cristo",
+      "author": "Ellen G. White",
+      "slug": "caminho-a-cristo",
+      "pdf": "/downloads/caminho-a-cristo.pdf"
+    },
+    {
+      "title": "O Grande Conflito",
+      "author": "Ellen G. White",
+      "slug": "o-grande-conflito",
+      "pdf": "/downloads/o-grande-conflito.pdf"
+    },
+    {
+      "title": "O Desejado de Todas as Nações",
+      "author": "Ellen G. White",
+      "slug": "o-desejado-de-todas-as-nacoes",
+      "pdf": "/downloads/o-desejado-de-todas-as-nacoes.pdf"
+    },
+    {
+      "title": "Patriarcas e Profetas",
+      "author": "Ellen G. White",
+      "slug": "patriarcas-e-profetas",
+      "pdf": "/downloads/patriarcas-e-profetas.pdf"
+    }
+  ]
+}
